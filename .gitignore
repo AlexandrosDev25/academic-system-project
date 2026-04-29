@@ -1,4 +1,11 @@
+# Ignorar todo excepto la carpeta de tu proyecto actual
+*
+!Projects/
+!Projects/academic_system/
+#* le dice a Git "ignora todo". Pero ! significa "excepto". Así que le decimos "Ignora todo, excepto la carpeta Projects y lo que esté dentro de academic_system".
+
+# Opcional: Si quieres ignorar carpetas específicas que no quieras ver
+Practice/
+Support material/
 *.pdf
 *.txt
-ejercicios-*.txt
-Glosario_*.pdf
