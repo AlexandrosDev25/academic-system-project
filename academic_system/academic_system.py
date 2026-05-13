@@ -1,49 +1,55 @@
-current_state = True
+estado_actual = True
 
-users_info = {
-    "students": {},
-    "teachers": {},
-    "admins": {}
-    #user roles
-}
-while current_state:
-    print("Welcome to the Academic System!")
-    print("What type of user are you?")
-    print("1. Student")
-    print("2. Teacher")
-    print("3. Admin")
+usuarios = {}
 
-    op = str(input("Please enter the number corresponding to your role: "))
-    #choosing a user role
+estudiantes = []
+
+admin = []
+
+profesores = []
+
+usuarios['estudiantes'] = estudiantes
+usuarios['admin'] = admin
+usuarios['profesores'] = profesores
+
+while estado_actual:
+    print("¡Bienvenido al Sistema Académico!")
+    print("¿Qué tipo de usuario eres?")
+    print("1. Estudiante")
+    print("2. Profesor")
+    print("3. Administrador")
+
+    op = str(input("Por favor, ingresa el número correspondiente a tu rol: "))
+    #elegir un rol de usuario
     
     match op:
         case "1":
-            print("Welcome, Student!")
-            username = input("Insert ur username: ")
-            password = input("Insert ur password: ")
-            users_info["students"][username] = password
-            print("You have successfully logged in as a Student.")
+            print("¡Bienvenido, Estudiante!")
+            username = input("Ingresa tu nombre de usuario: ")
+            password = input("Ingresa tu contraseña: ")
+            usuarios["estudiantes"][username] = password
+            print("Has iniciado sesión exitosamente como Estudiante.")
 
         case "2":
-            print("Welcome, Teacher!")
-            username = input("Insert ur username: ")
-            password = input("Insert ur password: ")
-            users_info["teachers"][username] = password
-            print("You have successfully logged in as a Teacher.")
+            print("¡Bienvenido, Profesor!")
+            username = input("Ingresa tu nombre de usuario: ")
+            password = input("Ingresa tu contraseña: ")
+            usuarios["profesores"][username] = password
+            print("Has iniciado sesión exitosamente como Profesor.")
 
         case "3":
-            print("Welcome, Admin!")
-            username = input("Insert ur username: ")
-            password = input("Insert ur password: ")
-            users_info["admins"][username] = password
-            print("You have successfully logged in as an Admin.")
+            print("¡Bienvenido, Administrador!")
+            username = input("Ingresa tu nombre de usuario: ")
+            password = input("Ingresa tu contraseña: ")
+            usuarios["admin"][username] = password
+            print("Has iniciado sesión exitosamente como Administrador.")
         case _:
-                print("Invalid input. Please try again.")
+                print("Entrada inválida. Por favor, intenta de nuevo.")
 
-    for key, value in users_info.items():
+    for key, value in usuarios.items():
         print(f"{key.capitalize()}: {value}")
         
-    continue_input = input("Do you want to continue? (yes/no): ")
-    if continue_input.lower() != "yes":
-        current_state = False
-        print("Thank you for using the Academic System. Goodbye!")
+    continue_input = input("¿Deseas continuar? (sí/no): ")
+    if continue_input.lower() != "sí":
+        estado_actual = False
+        print("¡Gracias por usar el Sistema Académico. ¡Adiós!")
