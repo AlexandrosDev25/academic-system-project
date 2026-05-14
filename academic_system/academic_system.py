@@ -49,7 +49,7 @@ while estado_actual:
     for key, value in usuarios.items():
         print(f"{key.capitalize()}: {value}")
         
-    continue_input = input("¿Deseas continuar? (sí/no): ")
-    if continue_input.lower() != "sí":
+    continue_input = input("¿Deseas continuar? (si/no): ")
+    if continue_input.lower() != "si":
         estado_actual = False
         print("¡Gracias por usar el Sistema Académico. ¡Adiós!")
